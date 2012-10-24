@@ -7,7 +7,8 @@
 			<last>Gallagher</last>
 		</name>
 
-		<address href="https://maps.google.co.uk/maps?q=Mossley,%20OL5"><![CDATA[Mossley<br>Ashton-under-Lyne<br>Lancashire<br>OL5 0LQ]]></address>
+		<address href="https://maps.google.co.uk/maps?q=Mossley,%20OL5"><![CDATA[Mossley<br>Ashton-under-Lyne<br>Lancashire<br>OL5 0LQ]]>
+		</address>
 
 		<contact>
 			<email>martin@martinpaulgallagher.com</email>
@@ -91,7 +92,8 @@
 			<entry href="http://mutat.io/" from="2012" to="Current">
 				<title>Mutatio</title>
 
-				<content><![CDATA[A collection of <a href="http://git.mutat.io/projects/">open source projects</a> and services.]]></content>
+				<content><![CDATA[A collection of <a href="http://git.mutat.io/projects/">open source projects</a> and services.]]>
+				</content>
 			</entry>
 		</section>
 	</experience>

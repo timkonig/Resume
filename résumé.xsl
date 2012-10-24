@@ -153,7 +153,7 @@
 
 					<footer>
 						<p>
-							<a href="#">Source Code</a>
+							<a href="https://github.com/MartinGallagher/Resume" rel="nofollow">Source Code</a>
 						</p>
 					</footer>
 				</div>

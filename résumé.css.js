@@ -81,6 +81,7 @@ new Style({
 					li: {
 						'float': 'left',
 						margin_left: 10,
+						min_width: 22,
 
 						'$first-child': {
 							margin_left: 0
@@ -98,6 +99,8 @@ new Style({
 				},
 
 				'ul:last-child': {
+					clear: 'left',
+
 					li: {
 						margin: '10px 0',
 
@@ -130,18 +133,18 @@ new Style({
 
 new Style({
 	'body > div > section': {
-		display: 'table',
+		display: 'block',
 		'float': 'left',
 		clear: 'left',
-		margin: '10px 10px 0 10px',
-		width: 'auto',
+		margin: '0 10px 20px',
 
 		'> section': {
 			display: 'table-row',
 
 			'h3, p': {
 				display: 'table-cell',
-				padding: '3px 10px'
+				padding: '3px 10px',
+				text_align: 'justify'
 			},
 
 			h3: {
@@ -153,6 +156,7 @@ new Style({
 				border_bottom: '#ddd 1px solid',
 				letter_spacing: 1,
 				font_weight: 'normal',
+				margin: 0,
 
 				$after: {
 					content: "':'"
@@ -162,7 +166,8 @@ new Style({
 			p: {
 				vertical_align: 'top',
 				border_bottom: 'rgba(230, 230, 230, 0.5) 1px solid',
-				background_color: 'rgba(255, 255, 255, 0.55)'
+				background_color: 'rgba(255, 255, 255, 0.55)',
+				margin: 0
 			},
 
 			'$last-child': {
@@ -185,7 +190,7 @@ new Style({
 new Style({
 	article: {
 		h3: {
-			margin: '10px 0 4px 0',
+			margin: '15px 0 4px 0',
 			color: lightText,
 			font_size: 18,
 			font_weight: 'normal',
@@ -208,7 +213,7 @@ new Style({
 		},
 
 		p: {
-			margin: '0 0 15px 0',
+			margin: '0 0 10px 0',
 			text_align: 'justify'
 		}
 	}

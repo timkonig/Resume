@@ -1,6 +1,7 @@
 Style.disableBranding();
 
 var text = new Hex('#777');
+var lightText = lighten(text, 0.45);
 var darkText = new RGBA(darken(text, 0.45));
 darkText.alpha = 0.8;
 
@@ -24,16 +25,22 @@ new Style({
 
 		p: {
 			margin: 0,
-			color: '#aaa',
-			font_size: 18
+			color: lightText,
+			font_size: 16
 		}
+	}
+});
+
+new Style({
+	abbr: {
+		border_bottom: '#ccc 1px dotted'
 	}
 });
 
 new Style({
 	body: {
 		cursor: 'default',
-		margin: '15px 0',
+		margin: 0,
 		padding: 0,
 		font: '13px/18px \'Helvetica Neue\', Helvetica, Arial, sans-serif',
 		text_align: 'center',
@@ -42,10 +49,12 @@ new Style({
 
 		'> div': {
 			width: '60%',
-			min_width: 700,
+			min_width: 640,
 			margin: '0 auto',
 			text_align: 'left',
-			background_image: 'url(images/bg.png)',
+			background: '#fbfbfb url(images/bg.png)',
+			border_left: 'rgba(230, 230, 230, 0.65) 1px solid',
+			border_right: 'rgba(230, 230, 230, 0.65) 1px solid',
 
 			/**
 			 * Right floating DIV, containing social links, address & contact details
@@ -63,8 +72,32 @@ new Style({
 				ul: {
 					list_style: 'none',
 					margin: 0,
-					padding: 0,
+					padding: 0
+				},
 
+				'ul:first-child': {
+					height: 22,
+
+					li: {
+						'float': 'left',
+						margin_left: 10,
+
+						'$first-child': {
+							margin_left: 0
+						}
+					},
+
+					a: {
+						opacity: '0.4',
+						height: 22,
+
+						$hover: {
+							opacity: '1.0'
+						}
+					}.extend(CSS.transition('opacity 0.3s linear'))
+				},
+
+				'ul:last-child': {
 					li: {
 						margin: '10px 0',
 
@@ -72,32 +105,13 @@ new Style({
 							margin_bottom: 0
 						}
 					}
-				},
-
-				p: {
-					margin: '0 0 10px',
-
-					a: {
-						opacity: '0.4',
-						display: 'inline-block',
-						margin_left: 8,
-						height: 22,
-
-						'$first-child':	{
-							margin_left: 0
-						},
-
-						$hover: {
-							opacity: '1.0'
-						}
-					}.extend(CSS.transition('opacity 0.3s linear'))
 				}
 			}.extend(CSS.borderRadius(0, 5)),
 
 			'> div:nth-child(2)': {
 				padding: 10
 			}
-		}.extend(CSS.borderRadius(5), CSS.boxShadow(1, 1, 3, 2, '#e0e0e0'))
+		}
 	}
 });
 
@@ -109,7 +123,8 @@ new Style({
 
 new Style({
 	address: {
-		font_style: 'normal'
+		font_style: 'normal',
+		margin_top: 8
 	}
 });
 
@@ -134,6 +149,7 @@ new Style({
 				vertical_align: 'middle',
 				color: text,
 				background_color: 'rgba(200, 200, 200, 0.3)',
+				border_top: '#f3f3f3 1px solid',
 				border_bottom: '#ddd 1px solid',
 				letter_spacing: 1,
 				font_weight: 'normal',
@@ -169,18 +185,23 @@ new Style({
 new Style({
 	article: {
 		h3: {
-			margin: '15px 0 4px 0',
-			color: '#aaa',
+			margin: '10px 0 4px 0',
+			color: lightText,
 			font_size: 18,
 			font_weight: 'normal',
 			letter_spacing: 1,
+			line_height: 22,
 
-			small: {
+			'small, strong': {
 				font_size: 12
 			},
 
+			strong: {
+				font_weight: 'normal'
+			},
+
 			a: {
-				color: '#aaa',
+				color: lightText,
 				text_decoration: 'none',
 				border_bottom: '#ddd 1px solid'
 			}
@@ -197,11 +218,15 @@ new Style({
 	footer: {
 		clear: 'left',
 
+		p: {
+			margin: '10px 0 0'
+		},
+
 		a: {
 			display: 'block',
 			text_align: 'center',
-			margin: '10px 0',
-			padding: 5,
+			margin: '10px 0 0',
+			padding: '5px 0 7px 0',
 			border_top: 'rgba(230, 230, 230, 0.65) 1px solid',
 			background_color: 'rgba(230, 230, 230, 0.5)',
 			text_decoration: 'none',

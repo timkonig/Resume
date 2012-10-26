@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="résumé.xsl"?>
 <résumé>
+	<analytics id="UA-35881849-1" />
+
 	<about>
 		<name>
 			<first>Martin</first>
 			<last>Gallagher</last>
 		</name>
 
-		<address href="https://maps.google.co.uk/maps?q=Mossley,%20OL5"><![CDATA[Mossley<br>Ashton-under-Lyne<br>Lancashire<br>OL5 0LQ]]>
+		<address href="https://maps.google.co.uk/maps?q=Mossley,%20OL5">
+			<line type="locality">Mossley</line>
+			<line type="region">Ashton-under-Lyne</line>
+			<line>Lancashire</line>
+			<line>OL5 0LQ</line>
 		</address>
 
 		<contact>
@@ -25,7 +31,7 @@
 				<image title="LinkedIn" src="images/linkedin.svg" />
 			</link>
 
-			<link href="https://plus.google.com/u/0/107488664113937857618">
+			<link href="https://plus.google.com/107488664113937857618?rel=author">
 				<image title="Google+" src="images/google+.svg" />
 			</link>
 
@@ -52,9 +58,11 @@
 	<skills>
 		<set title="Platforms">Comfortable on a number of platforms with Linux being prefered. Experience using Apache, Nginx, Tomcat, Go's net/http package and Amazon Web Services.</set>
 
-		<set title="Programming">Java, HTML5 / JavaScript / CSS, PHP, SQL, XML / XSLT, comfortable with Go and some experience in C/C++ and C#.</set>
+		<set title="Programming"><![CDATA[Java, <abbr title="HyperText Markup Language">HTML</abbr> / HTML5, JavaScript, <abbr title="Cascading Style Sheets">CSS</abbr> / CSS3, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, <abbr title="Structured Query Language">SQL</abbr>, <abbr title="Extensible Markup Language">XML</abbr>, <abbr title="Extensible Stylesheet Language">XSL</abbr> / <abbr title="XSL Transformations">XSLT</abbr>, comfortable with Go and some experience in C/C++ and C#.]]>
+		</set>
 
-		<set title="Data">RDBMS: PostgreSQL and MySQL. Experience of systems with billions of rows of data. Well versed in the full-text search engine Sphinx, setup and optimisation. “NoSQL”: Apache Cassandra and Redis.</set>
+		<set title="Data"><![CDATA[<abbr title="Relational Database Management System">RDBMS</abbr>: PostgreSQL and MySQL. Experience of systems with billions of rows of data. Well versed in the full-text search engine Sphinx, setup and optimisation. “NoSQL”: Apache Cassandra and Redis.]]>
+		</set>
 
 		<set title="Tools">Comfortable with both Eclipse and NetBeans. Experience with Microsoft Visual Studio. Experience using both Git and Mercurial source control management systems.</set>
 	</skills>
@@ -64,19 +72,28 @@
 			<entry href="http://synthesio.com/corporate/" from="2011" to="Current">
 				<title>Synthesio</title>
 
-				<content>Develop systems to crawl high volumes of data from sources across the web; analysing and making the data set searchable to clients. My specific projects have included the monitoring of social networks VKontakte and Twitter-like Chinese social networks Sina Weibo and Tencent Weibo. Outside of crawling I have worked on tools to improve Unicode support of Sphinx deployments and a host of backend system tools. Technologies used include PHP, MySQL, Sphinx, Unicode, social network APIs including YouTube, VKontakte, Sina and Tencent Weibo &amp; more.</content>
+				<role>Developer</role>
+
+				<content><![CDATA[Develop systems to crawl high volumes of data from sources across the web; analysing and making the data set searchable to clients. My specific projects have included the monitoring of social networks VKontakte and Twitter-like Chinese social networks Sina Weibo and Tencent Weibo. Outside of crawling I have worked on tools to improve Unicode support of Sphinx deployments and a host of backend system tools. Technologies used include PHP, MySQL, Sphinx, Unicode, social network APIs including YouTube, VKontakte, Sina and Tencent Weibo &amp; more.]]>
+				</content>
 			</entry>
 
 			<entry href="http://www.itsoneiota.com/" rel="nofollow" from="2010" to="2011">
 				<title>One Iota Ltd.</title>
 
-				<content>Working on a multitude of technologies and projects, from brand awareness systems implemented in Java to Facebook applications and HTML5 mobile websites including the first iteration of FootAsylum’s mobile website optimised for WebKit browsers. Technologies used included HTML5, CSS3, Java, PHP, JavaScript (jQuery) and Facebook &amp; Twitter APIs.</content>
+				<role>Technology Developer</role>
+
+				<content><![CDATA[Working on a multitude of technologies and projects, from brand awareness systems implemented in Java to Facebook applications and HTML5 mobile websites including the first iteration of FootAsylum’s mobile website optimised for WebKit browsers. Technologies used included HTML5, CSS3, Java, PHP, JavaScript (jQuery) and Facebook &amp; Twitter APIs.]]>
+				</content>
 			</entry>
 
 			<entry from="2004">
 				<title>Software Systems Europe</title>
 
-				<content>Duties included the maintenance and installation of bespoke software for companies in the textile industry. Software built on the Windows platform using Visual Basic and Microsoft SQL Server.</content>
+				<role>Developer</role>
+
+				<content><![CDATA[Duties included the maintenance and installation of bespoke software for companies in the textile industry. Software built on the Windows platform using Visual Basic and Microsoft SQL Server.]]>
+				</content>
 			</entry>
 		</section>
 
@@ -84,7 +101,8 @@
 			<entry from="2004" to="2010">
 				<title>Speeple News</title>
 
-				<content>A popular news site developed, designed and run by myself. Frontend developed using PHP, crawling was handled by a custom multithreaded Java crawler feeding the MySQL &amp; Sphinx backend. The accumulated news (sourced from syndication formats i.e. RSS &amp; Atom) data was in the hundreds of gigabytes and fully searchable.</content>
+				<content><![CDATA[A popular news site developed, designed and run by myself. Frontend developed using PHP, crawling was handled by a custom multithreaded Java crawler feeding the MySQL &amp; Sphinx backend. The accumulated news (sourced from syndication formats i.e. <abbr title="Really Simple Syndication">RSS</abbr> &amp; Atom) data was in the hundreds of gigabytes and fully searchable using a single server.]]>
+				</content>
 			</entry>
 		</section>
 
@@ -92,7 +110,7 @@
 			<entry href="http://mutat.io/" from="2012" to="Current">
 				<title>Mutatio</title>
 
-				<content><![CDATA[A collection of <a href="http://git.mutat.io/projects/">open source projects</a> and services.]]>
+				<content><![CDATA[A collection of <a href="http://git.mutat.io/projects/">open source projects</a> and services built using Java, Go, JavaScript, HTML5 backed by PostgreSQL, Redis and Apache Cassandra.]]>
 				</content>
 			</entry>
 		</section>

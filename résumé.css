@@ -69,7 +69,8 @@ body > div > div:first-child ul:first-child {
 
 body > div > div:first-child ul:first-child li {
 	float: left;
-	margin-left: 10px
+	margin-left: 10px;
+	min-width: 22px
 }
 
 body > div > div:first-child ul:first-child li:first-child {
@@ -87,6 +88,10 @@ body > div > div:first-child ul:first-child a {
 
 body > div > div:first-child ul:first-child a:hover {
 	opacity: 1.0
+}
+
+body > div > div:first-child ul:last-child {
+	clear: left
 }
 
 body > div > div:first-child ul:last-child li {
@@ -111,11 +116,10 @@ address {
 }
 
 body > div > section {
-	display: table;
+	display: block;
 	float: left;
 	clear: left;
-	margin: 10px 10px 0 10px;
-	width: auto
+	margin: 0 10px 20px
 }
 
 body > div > section > section {
@@ -124,7 +128,8 @@ body > div > section > section {
 
 body > div > section > section h3, body > div > section > section p {
 	display: table-cell;
-	padding: 3px 10px
+	padding: 3px 10px;
+	text-align: justify
 }
 
 body > div > section > section h3 {
@@ -135,7 +140,8 @@ body > div > section > section h3 {
 	border-top: #f3f3f3 1px solid;
 	border-bottom: #ddd 1px solid;
 	letter-spacing: 1px;
-	font-weight: normal
+	font-weight: normal;
+	margin: 0
 }
 
 body > div > section > section h3:after {
@@ -145,7 +151,8 @@ body > div > section > section h3:after {
 body > div > section > section p {
 	vertical-align: top;
 	border-bottom: rgba(230, 230, 230, 0.5) 1px solid;
-	background-color: rgba(255, 255, 255, 0.55)
+	background-color: rgba(255, 255, 255, 0.55);
+	margin: 0
 }
 
 body > div > section > section:last-child h3, body > div > section > section:last-child p {
@@ -163,7 +170,7 @@ body > div > section > h2 {
 }
 
 article h3 {
-	margin: 10px 0 4px 0;
+	margin: 15px 0 4px 0;
 	color: #acacac;
 	font-size: 18px;
 	font-weight: normal;
@@ -186,7 +193,7 @@ article h3 a {
 }
 
 article p {
-	margin: 0 0 15px 0;
+	margin: 0 0 10px 0;
 	text-align: justify
 }
 

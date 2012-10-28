@@ -66,7 +66,7 @@
 
 				<xsl:call-template name="openGraphMeta">
 					<xsl:with-param name="property" select="'image'" />
-					<xsl:with-param name="content" select="/résumé/about/photo/@src" />
+					<xsl:with-param name="content" select="concat(/résumé/@id, /résumé/about/photo/@src)" />
 				</xsl:call-template>
 
 				<link rel="stylesheet" href="résumé.css" />

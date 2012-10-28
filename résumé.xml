@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="résumé.xsl"?>
-<résumé>
+<résumé id="http://martingallagher.com/" lang="en">
 	<analytics id="UA-35881849-1" />
 
 	<about>
@@ -8,6 +8,8 @@
 			<first>Martin</first>
 			<last>Gallagher</last>
 		</name>
+
+		<photo src="images/martin-gallagher.jpg" />
 
 		<address href="https://maps.google.co.uk/maps?q=Mossley,%20OL5">
 			<line type="locality">Mossley</line>
@@ -56,7 +58,8 @@
 	<statement>Specialising in data mining, retrieval and analysis.</statement>
 
 	<skills>
-		<set title="Platforms">Comfortable on a number of platforms with Linux being prefered. Experience using Apache, Nginx, Tomcat, Go's net/http package and Amazon Web Services.</set>
+		<set title="Platforms"><![CDATA[Comfortable on a number of platforms with Linux being prefered. Experience using Apache, Nginx, Tomcat, Go's net/http package and Amazon Web Services.]]>
+		</set>
 
 		<set title="Programming"><![CDATA[Java, <abbr title="HyperText Markup Language">HTML</abbr> / HTML5, JavaScript, <abbr title="Cascading Style Sheets">CSS</abbr> / CSS3, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, <abbr title="Structured Query Language">SQL</abbr>, <abbr title="Extensible Markup Language">XML</abbr>, <abbr title="Extensible Stylesheet Language">XSL</abbr> / <abbr title="XSL Transformations">XSLT</abbr>, comfortable with Go and some experience in C/C++ and C#.]]>
 		</set>
@@ -64,7 +67,8 @@
 		<set title="Data"><![CDATA[<abbr title="Relational Database Management System">RDBMS</abbr>: PostgreSQL and MySQL. Experience of systems with billions of rows of data. Well versed in the full-text search engine Sphinx, setup and optimisation. “NoSQL”: Apache Cassandra and Redis.]]>
 		</set>
 
-		<set title="Tools">Comfortable with both Eclipse and NetBeans. Experience with Microsoft Visual Studio. Experience using both Git and Mercurial source control management systems.</set>
+		<set title="Tools"><![CDATA[Comfortable with both Eclipse and NetBeans. Experience with Microsoft Visual Studio. Experience using both Git and Mercurial source control management systems.]]>
+		</set>
 	</skills>
 
 	<experience>
@@ -116,5 +120,5 @@
 		</section>
 	</experience>
 
-	<personal>Passionate about natural history, evolution, football and weight training.</personal>
+	<personal title="About">My interests include programming, natural history, football (both playing and as a spectator) and weight / sprint training.</personal>
 </résumé>

@@ -1,5 +1,3 @@
-Style.disableBranding();
-
 var text = new Hex('#777');
 var lightText = lighten(text, 0.45);
 var darkText = new RGBA(darken(text, 0.45));
@@ -10,10 +8,12 @@ var innerShadow = {
 	text_shadow: '1px 1px 3px #fff, 0 0 0 #000, 1px 1px 3px #eee'
 };
 
+var photoShadow = CSS.boxShadow(0, 1, 3, 'rgba(0, 0, 0, 0.4)');
+
 new Style({
 	header: {
 		'float': 'left',
-		margin: '10px 0 0 10px',
+		margin: '10px 0 50px 10px',
 
 		h1: {
 			margin: '10px 0 20px',
@@ -68,6 +68,7 @@ new Style({
 				border_left: 'rgba(230, 230, 230, 0.65) 1px solid',
 				border_bottom: 'rgba(230, 230, 230, 0.65) 1px solid',
 				padding: '10px 10px 10px',
+				margin: '0 0 10px 10px',
 
 				ul: {
 					list_style: 'none',
@@ -75,7 +76,43 @@ new Style({
 					padding: 0
 				},
 
-				'ul:first-child': {
+				p: {
+					margin: '0 5px 17px 6px',
+					position: 'relative',
+					z_index: '10',
+
+					img: {
+						max_width: '100%',
+						height: 'auto',
+						vertical_align: 'bottom',
+						border: '5px solid #fff',
+						border_radius: 3,
+						_webkit_box_sizing: 'border-box',
+						_moz_box_sizing: 'border-box',
+						box_sizing: 'border-box'
+					}.extend(photoShadow)
+				},
+
+				'p:before, p:after': {
+					content: '""',
+					border_radius: 3,
+					width: '100%',
+					height: '100%',
+					position: 'absolute',
+					border: '5px solid #fff',
+					left: 0
+				}.extend(CSS.transformOrigin('bottom left'), CSS.boxSizing('border-box'), photoShadow),
+
+				'p:before': {
+					z_index: '-10'
+				}.extend(CSS.transform('rotate(1.35deg)')),
+
+				'p:after': {
+					top: 4,
+					z_index: '-20'
+				}.extend(CSS.transform('rotate(-1.35deg)')),
+
+				'ul:nth-child(2)': {
 					height: 22,
 
 					li: {
@@ -131,12 +168,13 @@ new Style({
 	}
 });
 
+/**
+ * Skills table
+ */
 new Style({
 	'body > div > section': {
-		display: 'block',
-		'float': 'left',
 		clear: 'left',
-		margin: '0 10px 20px',
+		margin: '45px 10px 0',
 
 		'> section': {
 			display: 'table-row',
@@ -177,16 +215,24 @@ new Style({
 			}
 		},
 
+		'section:nth-child(2) h3': {
+			border_top: 'none'
+		},
+
 		'> h2': {
-			margin: '15px 0 10px',
+			margin: '0 0 10px',
 			font_size: 28,
 			position: 'relative',
 			left: -1,
-			letter_spacing: 1
-		}.extend(innerShadow)
+			letter_spacing: 1,
+		//'float': 'left'
+		}.extend(innerShadow),
 	}
 });
 
+/**
+ * Experiences, roles & projects
+ */
 new Style({
 	article: {
 		h3: {
@@ -221,8 +267,6 @@ new Style({
 
 new Style({
 	footer: {
-		clear: 'left',
-
 		p: {
 			margin: '10px 0 0'
 		},

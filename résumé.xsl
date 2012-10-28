@@ -1,20 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="html" encoding="utf-8" indent="yes" />
+	<xsl:strip-space elements="*" />
+
+	<xsl:template name="openGraphMeta" match="/">
+		<xsl:param name="property" />
+		<xsl:param name="content" />
+
+		<xsl:if test="$content">
+			<meta property="og:url">
+				<xsl:attribute name="property">
+					<xsl:value-of select="concat('og:', $property)" />
+				</xsl:attribute>
+
+				<xsl:attribute name="content">
+					<xsl:value-of select="$content" />
+				</xsl:attribute>
+			</meta>
+		</xsl:if>
+	</xsl:template>
 
 	<xsl:template match="/">
+		<xsl:variable name="title" select="concat(/résumé/about/name/first, ' ', /résumé/about/name/last, ' - Curriculum vitæ / Résumé')" />
+
 		<xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html>]]>
 		</xsl:text>
 
-		<html lang="en">
+		<html>
+			<xsl:if test="/résumé/@lang">
+				<xsl:attribute name="lang">
+					<xsl:value-of select="/résumé/@lang" />
+				</xsl:attribute>
+			</xsl:if>
+
 			<head>
 				<title>
-					<xsl:value-of select="concat(/résumé/about/name/first, ' ', /résumé/about/name/last, ' - ')" />Curriculum vitæ / Résumé
+					<xsl:value-of select="$title" />
 				</title>
+
+				<meta name="description">
+					<xsl:attribute name="content">
+						<xsl:value-of select="/résumé/statement" />
+					</xsl:attribute>
+				</meta>
 
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 				<meta name="apple-mobile-web-app-capable" content="yes" />
 				<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+				<meta property="og:type" content="website" />
+
+				<xsl:call-template name="openGraphMeta">
+					<xsl:with-param name="property" select="'url'" />
+					<xsl:with-param name="content" select="/résumé/@id" />
+				</xsl:call-template>
+
+				<xsl:call-template name="openGraphMeta">
+					<xsl:with-param name="property" select="'title'" />
+					<xsl:with-param name="content" select="$title" />
+				</xsl:call-template>
+
+				<xsl:call-template name="openGraphMeta">
+					<xsl:with-param name="property" select="'description'" />
+					<xsl:with-param name="content" select="résumé/statement" />
+				</xsl:call-template>
+
+				<xsl:call-template name="openGraphMeta">
+					<xsl:with-param name="property" select="'image'" />
+					<xsl:with-param name="content" select="/résumé/about/photo/@src" />
+				</xsl:call-template>
 
 				<link rel="stylesheet" href="résumé.css" />
 
@@ -39,6 +92,24 @@
 			<body>
 				<div itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
 					<div>
+						<xsl:if test="/résumé/about/photo/@src">
+							<p>
+								<img>
+									<xsl:attribute name="src">
+										<xsl:value-of select="/résumé/about/photo/@src" />
+									</xsl:attribute>
+
+									<xsl:attribute name="alt">
+										<xsl:value-of select="concat(/résumé/about/name/first, ' ', /résumé/about/name/last)" />
+									</xsl:attribute>
+
+									<xsl:attribute name="width">
+										<xsl:value-of select="count(/résumé/about/social/link) * 32" />
+									</xsl:attribute>
+								</img>
+							</p>
+						</xsl:if>
+
 						<ul>
 							<xsl:for-each select="/résumé/about/social/link">
 								<li>
@@ -215,6 +286,18 @@
 							</xsl:for-each>
 						</section>
 					</xsl:for-each>
+
+					<xsl:if test="/résumé/personal">
+						<section>
+							<h2>
+								<xsl:value-of select="/résumé/personal/@title" />
+							</h2>
+
+							<p>
+								<xsl:value-of select="/résumé/personal" disable-output-escaping="yes" />
+							</p>
+						</section>
+					</xsl:if>
 
 					<footer>
 						<p>

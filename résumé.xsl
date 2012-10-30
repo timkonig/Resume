@@ -128,6 +128,7 @@
 											</xsl:attribute>
 
 											<xsl:attribute name="height">22</xsl:attribute>
+											<xsl:attribute name="width">22</xsl:attribute>
 										</xsl:element>
 									</xsl:element>
 								</li>

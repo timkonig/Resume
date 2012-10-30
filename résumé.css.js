@@ -31,9 +31,25 @@ new Style({
 	}
 });
 
+/**
+ * Basic styles
+ */
 new Style({
+	a: {
+		color: text,
+
+		img: {
+			border: 'none'
+		}
+	},
+
 	abbr: {
 		border_bottom: '#ccc 1px dotted'
+	},
+
+	address: {
+		font_style: 'normal',
+		margin_top: 8
 	}
 });
 
@@ -95,11 +111,12 @@ new Style({
 
 				'p:before, p:after': {
 					content: '""',
+					background_color: '#fff',
 					border_radius: 3,
 					width: '100%',
 					height: '100%',
 					position: 'absolute',
-					border: '5px solid #fff',
+					border: 'none',
 					left: 0
 				}.extend(CSS.transformOrigin('bottom left'), CSS.boxSizing('border-box'), photoShadow),
 
@@ -152,19 +169,6 @@ new Style({
 				padding: 10
 			}
 		}
-	}
-});
-
-new Style({
-	a: {
-		color: text
-	}
-});
-
-new Style({
-	address: {
-		font_style: 'normal',
-		margin_top: 8
 	}
 });
 
@@ -224,9 +228,8 @@ new Style({
 			font_size: 28,
 			position: 'relative',
 			left: -1,
-			letter_spacing: 1,
-		//'float': 'left'
-		}.extend(innerShadow),
+			letter_spacing: 1
+		}.extend(innerShadow)
 	}
 });
 
@@ -268,7 +271,7 @@ new Style({
 new Style({
 	footer: {
 		p: {
-			margin: '10px 0 0'
+			margin: '45px 0 0'
 		},
 
 		a: {

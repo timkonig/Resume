@@ -49,7 +49,7 @@ new Style({
 
 	address: {
 		font_style: 'normal',
-		margin_top: 8
+		margin_top: 15
 	}
 });
 
@@ -88,12 +88,12 @@ new Style({
 
 				ul: {
 					list_style: 'none',
-					margin: 0,
+					margin: '0 auto',
 					padding: 0
 				},
 
 				p: {
-					margin: '0 5px 17px 6px',
+					margin: '0 5px 20px 6px',
 					position: 'relative',
 					z_index: '10',
 
@@ -133,9 +133,9 @@ new Style({
 					height: 22,
 
 					li: {
-						'float': 'left',
 						margin_left: 10,
 						min_width: 22,
+						display: 'inline',
 
 						'$first-child': {
 							margin_left: 0

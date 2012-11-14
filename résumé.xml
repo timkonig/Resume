@@ -58,7 +58,7 @@
 	<statement>Specialising in data mining, retrieval and analysis.</statement>
 
 	<skills>
-		<set title="Platforms"><![CDATA[Comfortable on a number of platforms with Linux being prefered. Experience using Apache, Nginx, Tomcat, Go's net/http package and Amazon Web Services.]]>
+		<set title="Platforms"><![CDATA[Comfortable on a number of platforms with Linux being prefered. Experience using Apache, Nginx, Tomcat, Node.js, Go's net/http package and Amazon Web Services.]]>
 		</set>
 
 		<set title="Programming"><![CDATA[Java, <abbr title="HyperText Markup Language">HTML</abbr> / HTML5, JavaScript, <abbr title="Cascading Style Sheets">CSS</abbr> / CSS3, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, <abbr title="Structured Query Language">SQL</abbr>, <abbr title="Extensible Markup Language">XML</abbr>, <abbr title="Extensible Stylesheet Language">XSL</abbr> / <abbr title="XSL Transformations">XSLT</abbr>, comfortable with Go and some experience in C/C++ and C#.]]>
@@ -123,6 +123,15 @@
 
 				<content><![CDATA[A collection of <a href="http://git.mutat.io/projects/">open source projects</a> and services built using Java, Go, JavaScript, HTML5 backed by PostgreSQL, Redis and Apache Cassandra.]]>
 				</content>
+
+				<section title="Subprojects">
+					<entry href="http://encycolorpedia.com/" from="2012" to="Current">
+						<title>Encycolorpedia</title>
+
+						<content><![CDATA[Providing insights into colours - producing complementary and related palettes for any hex, <abbr title="Red green blue color model">RGB</abbr> / <abbr title="RGB alpha color model">RGBA</abbr>, <abbr title="Hue, saturation and lightness colour space">HSL</abbr> / <abbr title="HSL alpha colour space">HSLA</abbr> format colour along with information and conversions to several other popular colour spaces. Colour profile pages are dynamically styled from the given hex colour. This service was constructed entirely using Node.js and JavaScript.]]>
+						</content>
+					</entry>
+				</section>
 			</entry>
 		</section>
 	</experience>

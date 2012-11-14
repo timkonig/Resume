@@ -217,73 +217,10 @@
 							<xsl:variable name="sectionTitle" select="@title" />
 
 							<xsl:for-each select="entry">
-								<xsl:variable name="roleTitle">
-									<xsl:choose>
-										<xsl:when test="@to = 'Current' and $sectionTitle = 'Employment'">
-											<span itemprop="affiliation">
-												<xsl:value-of select="title" />
-											</span>
-										</xsl:when>
-
-										<xsl:otherwise>
-											<xsl:value-of select="title" />
-										</xsl:otherwise>
-									</xsl:choose>
-								</xsl:variable>
-
-								<article>
-									<h3>
-										<xsl:choose>
-											<xsl:when test="@href">
-												<xsl:element name="a">
-													<xsl:attribute name="href">
-														<xsl:value-of select="@href" />
-													</xsl:attribute>
-
-													<xsl:if test="@rel">
-														<xsl:attribute name="rel">
-															<xsl:value-of select="@rel" />
-														</xsl:attribute>
-													</xsl:if>
-
-													<xsl:copy-of select="$roleTitle" />
-												</xsl:element>
-											</xsl:when>
-
-											<xsl:otherwise>
-												<xsl:value-of select="$roleTitle" />
-											</xsl:otherwise>
-										</xsl:choose>
-
-										<br />
-
-										<xsl:if test="role">
-											<strong>
-												<xsl:if test="@to = 'Current' and $sectionTitle = 'Employment'">
-													<xsl:attribute name="itemprop">title</xsl:attribute>
-												</xsl:if>
-
-												<xsl:value-of select="role" />
-											</strong>
-
-											<xsl:text> </xsl:text>
-										</xsl:if>
-
-										<small>
-											<xsl:value-of select="@from" />
-
-											<xsl:if test="@to">
-												<xsl:text> - </xsl:text>
-
-												<xsl:value-of select="@to" />
-											</xsl:if>
-										</small>
-									</h3>
-
-									<p>
-										<xsl:value-of select="content" disable-output-escaping="yes" />
-									</p>
-								</article>
+								<xsl:call-template name="entry">
+									<xsl:with-param name="entry" select="." />
+									<xsl:with-param name="sectionTitle" select="$sectionTitle" />
+								</xsl:call-template>
 							</xsl:for-each>
 						</section>
 					</xsl:for-each>
@@ -308,5 +245,94 @@
 				</div>
 			</body>
 		</html>
+	</xsl:template>
+
+	<xsl:template name="entry">
+		<xsl:param name="entry" />
+		<xsl:param name="sectionTitle" />
+		<xsl:variable name="entryTitle" select="$entry/title" />
+
+		<xsl:variable name="roleTitle">
+			<xsl:choose>
+				<xsl:when test="$entry/@to = 'Current' and $sectionTitle = 'Employment'">
+					<span itemprop="affiliation">
+						<xsl:value-of select="$entry/title" />
+					</span>
+				</xsl:when>
+
+				<xsl:otherwise>
+					<xsl:value-of select="$entry/title" />
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+
+		<article>
+			<h3>
+				<xsl:choose>
+					<xsl:when test="$entry/@href">
+						<xsl:element name="a">
+							<xsl:attribute name="href">
+								<xsl:value-of select="$entry/@href" />
+							</xsl:attribute>
+
+							<xsl:if test="$entry/@rel">
+								<xsl:attribute name="rel">
+									<xsl:value-of select="$entry/@rel" />
+								</xsl:attribute>
+							</xsl:if>
+
+							<xsl:copy-of select="$roleTitle" />
+						</xsl:element>
+					</xsl:when>
+
+					<xsl:otherwise>
+						<xsl:value-of select="$roleTitle" />
+					</xsl:otherwise>
+				</xsl:choose>
+
+				<br />
+
+				<xsl:if test="$entry/role">
+					<strong>
+						<xsl:if test="$entry/@to = 'Current' and $sectionTitle = 'Employment'">
+							<xsl:attribute name="itemprop">title</xsl:attribute>
+						</xsl:if>
+
+						<xsl:value-of select="$entry/role" />
+					</strong>
+
+					<xsl:text> </xsl:text>
+				</xsl:if>
+
+				<small>
+					<xsl:value-of select="$entry/@from" />
+
+					<xsl:if test="$entry/@to">
+						<xsl:text> - </xsl:text>
+
+						<xsl:value-of select="$entry/@to" />
+					</xsl:if>
+				</small>
+			</h3>
+
+			<p>
+				<xsl:value-of select="$entry/content" disable-output-escaping="yes" />
+			</p>
+
+			<xsl:if test="$entry/section">
+				<section>
+					<h2>
+						<xsl:value-of select="$entry/section/@title" />
+					</h2>
+
+					<xsl:for-each select="$entry/section/entry">
+						<xsl:call-template name="entry">
+							<xsl:with-param name="entry" select="." />
+							<xsl:with-param name="sectionTitle" select="$entry/section/@title" />
+						</xsl:call-template>
+					</xsl:for-each>
+				</section>
+			</xsl:if>
+		</article>
 	</xsl:template>
 </xsl:stylesheet>

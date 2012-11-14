@@ -264,6 +264,16 @@ new Style({
 		p: {
 			margin: '0 0 10px 0',
 			text_align: 'justify'
+		},
+
+		section: {
+			h2: {
+				font_weight: 'normal'
+			},
+
+			margin_left: 15,
+			padding_left: 15,
+			border_left: lightText + ' 1px dotted'
 		}
 	}
 });
